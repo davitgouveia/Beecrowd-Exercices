@@ -1,4 +1,6 @@
 lista = []
+economizou = 0
+resultado = []
 
 while True:
     try:
@@ -10,14 +12,16 @@ while True:
         
         for y in range(n-1):
             for z in range(len(lista[0])):
-                print(lista[y][z],lista[y-1][z] , lista[y][z] == lista[y-1][z])
-                
                 if lista[y][z] == lista[y-1][z]:
-                    print("feio")
+                    economizou = economizou + 1
                 else:
                     break
+            resultado.append(economizou)
+            economizou = 0
         y = 0
         z = 0
         lista.clear()
     except EOFError:
+        for result in resultado:
+            print(result)
         break
