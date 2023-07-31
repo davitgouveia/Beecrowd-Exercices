@@ -25,4 +25,3 @@ for x in range(i):
 
 for z in range(len(result)):
     print(result[z])
-
